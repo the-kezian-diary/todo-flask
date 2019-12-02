@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 
 db = SQLAlchemy(app)
+
 
 class Todo(db.Model):
     id = db.Column(db.Integer,primary_key=True)
@@ -26,14 +27,15 @@ def  index():
         new_task = Todo(content=task_content)
 
         try:
+            print("Trying data Entry.")
             db.session.add(new_task)
             db.session.commit()
+            return redirect('/')
         except:
             return 'Issue in Post CodeBlock'
     else:
-        pass
-
-    return render_template('index.html')
+        task = Todo.query.order_by(Todo.date_created).all()    
+        return render_template('index.html', tasks=task)
 
 if __name__ == "__main__":
     app.run(debug=True)
