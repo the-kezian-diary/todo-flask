@@ -1,0 +1,14 @@
+
+.todo-add {
+    color: rgb(81, 133, 81);
+}
+
+.ongoing {
+    color: rgb(36, 36, 36);
+}
+
+.done:hover {
+    background-color: green;
+    color: white;
+    transition: 0.3s ease;
+}

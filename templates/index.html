@@ -7,86 +7,94 @@
 {% block body %}
 
 <section class="hero has-background-light is-fullheight">
-    <!-- Hero head: will stick at the top -->
-    <div class="hero-head  ">
-      <header class="navbar has-background-primary">
-        <div class="container ">
-          <div class="navbar-brand">
-            <a class="navbar-item">
-              <h1 class="title has-text-white">Todo-Flask</h1>
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head  ">
+    <header class="navbar has-background-success">
+      <div class="container ">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <h1 class="title has-text-white">Todo-Flask</h1>
+          </a>
+          <span class="navbar-burger burger"
+            onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');"
+            data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
             </a>
-            <span class="navbar-burger burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" data-target="navbarMenuHeroC">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroC" class="navbar-menu">
-            <div class="navbar-end">
-              <a class="navbar-item is-active">
-                Home
-              </a>
-              <a class="navbar-item">
-                Yada
-              </a>
-              <a class="navbar-item">
-                Wada
-              </a>
-            </div>
+            <a class="navbar-item">
+              Yada
+            </a>
+            <a class="navbar-item">
+              Wada
+            </a>
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
+  </div>
 
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="field is-expanded">
-            <div class="field has-addons">
-              <div class="control is-expanded">
-                <input class="input is-large" type="text" placeholder="What's in your mind?">
-              </div>
-              <div class="control">
-                <a class="button is-large done">
-                  <span class="icon is-large"><i class="fa fa-plus  todo-add done" ;" aria-hidden="true"></i></span>
-                </a>
-              </div>
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+
+      <div class="field is-expanded">
+        <form action="/" method="POST">
+          <div class="field has-addons">
+
+            <div class="control is-expanded">
+              <input class="input is-large" type="text" name='content' id='content' placeholder="What's in your mind?">
+            </div>
+            <div class="control">
+              <a class="button is-large done">
+                <span class="icon is-large"><input type='submit' class="fa fa-plus fa-2x todo-add done" ;"
+                    aria-hidden="true"></span>
+              </a>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+
+
+      <div class="box">
+        <article class="media">
+
+          <div class="media-content">
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                egestas. Nullam condimentum luctus turpis.
+              </p>
             </div>
           </div>
-     
-      
-          <div class="box">
-            <article class="media">
-      
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                    egestas. Nullam condimentum luctus turpis.
-                  </p>
-                </div>
-              </div>
-      
-              <div class="control done">
-                <a class="button done">
-                  <span class="icon"><i class="fa fa-check ongoing done" ;" aria-hidden="true"></i></span>
-                </a>
-              </div>
-            </article>
+
+          <div class="control done">
+            <a class="button done">
+              <span class="icon"><i class="fa fa-check fa-2x ongoing done" ;" aria-hidden="true"></i></span>
+            </a>
           </div>
+        </article>
       </div>
     </div>
+  </div>
 
-    
 
-    <!-- Hero footer: will stick at the bottom -->
-    <div class="hero-foot">
-        <p class="has-text-centered">
-            <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
-          </p>
-    </div>
-  </section>
+
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <p class="has-text-centered has-background-black has-text-white">
+      Todo-flask is built using <a href="https://palletsprojects.com/p/flask/">Flask </a> and <a
+        href="http://bulma.io">Bulma</a>.
+    </p>
+  </div>
+</section>
 
 {% endblock %}
